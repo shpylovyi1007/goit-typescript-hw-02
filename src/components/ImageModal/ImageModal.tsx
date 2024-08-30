@@ -1,9 +1,11 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import React from "react";
+import { ImageModalProps } from "./ImageModal.types";
 
 Modal.setAppElement("#root");
 
-export default function ImageModal({ isOpen, onRequestClose, imgInfo }) {
+const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onRequestClose, imgInfo }) => {
   const { src, alt } = imgInfo;
   return (
     <Modal
@@ -40,3 +42,5 @@ export default function ImageModal({ isOpen, onRequestClose, imgInfo }) {
     </Modal>
   );
 }
+
+export default ImageModal;
